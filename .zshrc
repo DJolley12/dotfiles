@@ -102,9 +102,9 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias csharp="cd source/repos/C#"
-alias zshconfig="nvim ~/.zshrc"
-alias ohmyzsh="~/.oh-my-zsh"
+# alias csharp="cd source/repos/C#"
+# alias zshconfig="nvim ~/.zshrc"
+# alias ohmyzsh="~/.oh-my-zsh"
 if [ -f ~/.zsh/zshalias ]; then
     source ~/.zsh/zshalias
 else
@@ -117,46 +117,46 @@ else
     print "404: ~/.zsh/csharpfuncs not found."
 fi
 
-avmvvm() {
-    if [ "$1" != "" ]
-    then
-        dotnet new avalonia.mvvm -o $1 -n $1
-    else 
-        ech "project name is required"
-    fi
-}
+# avmvvm() {
+#     if [ "$1" != "" ]
+#     then
+#         dotnet new avalonia.mvvm -o $1 -n $1
+#     else 
+#         ech "project name is required"
+#     fi
+# }
 
-avuctl() {
-    if [ "$1" != "" ]
-    then
-        dotnet new avalonia.usercontrol -o Views -n $1 --namespace $PWD.Views
-    else 
-        echo "view name is required"
-    fi
-}
+# avuctl() {
+#     if [ "$1" != "" ]
+#     then
+#         dotnet new avalonia.usercontrol -o Views -n $1 --namespace $PWD.Views
+#     else 
+#         echo "view name is required"
+#     fi
+# }
 
-dotnetnewcore() {
-    if [ "$1" != "" ]
-    then
-        dotnet new sln -o $1
-        cd $1
-        dotnet new classlib -o $1.Domain
-        dotnet new classlib -o $1.Application
-        dotnet new xunit -o $1.Tests
-        dotnet sln add $1.Domain
-        dotnet sln add $1.Application
-        dotnet sln add $1.Tests
-        rm $1.Domain/Class1.cs
-        rm $1.Application/Class1.cs
-        mkdir $1.Domain/Models
-        mkdir $1.Domain/Exception
-        mkdir $1.Domain/Enums
-        mkdir $1.Application/Exception
-        mkdir $1.Application/Interfaces
-        cp ~/source/repos/templates/csharp/.gitignore .
-        git init
-        git add . 
-    else 
-        echo "project name is required"
-    fi
+# dotnetnewcore() {
+#     if [ "$1" != "" ]
+#     then
+#         dotnet new sln -o $1
+#         cd $1
+#         dotnet new classlib -o $1.Domain
+#         dotnet new classlib -o $1.Application
+#         dotnet new xunit -o $1.Tests
+#         dotnet sln add $1.Domain
+#         dotnet sln add $1.Application
+#         dotnet sln add $1.Tests
+#         rm $1.Domain/Class1.cs
+#         rm $1.Application/Class1.cs
+#         mkdir $1.Domain/Models
+#         mkdir $1.Domain/Exception
+#         mkdir $1.Domain/Enums
+#         mkdir $1.Application/Exception
+#         mkdir $1.Application/Interfaces
+#         cp ~/source/repos/templates/csharp/.gitignore .
+#         git init
+#         git add . 
+#     else 
+#         echo "project name is required"
+#     fi
 }

@@ -1,0 +1,1 @@
+/home/danieljolley/source/repos/dotfiles/.zsh

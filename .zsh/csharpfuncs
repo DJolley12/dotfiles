@@ -21,19 +21,26 @@ dotnetnewcore() {
     then
         dotnet new sln -o $1
         cd $1
-        dotnet new classlib -o $1.Domain
-        dotnet new classlib -o $1.Application
-        dotnet new xunit -o $1.Tests
-        dotnet sln add $1.Domain
-        dotnet sln add $1.Application
-        dotnet sln add $1.Tests
-        rm $1.Domain/Class1.cs
-        rm $1.Application/Class1.cs
-        mkdir $1.Domain/Models
-        mkdir $1.Domain/Exception
-        mkdir $1.Domain/Enums
-        mkdir $1.Application/Exception
-        mkdir $1.Application/Interfaces
+        mkdir src
+        mkdir tests
+        dotnet new classlib -o src/$1.Domain
+        dotnet new classlib -o src/$1.Application
+        dotnet new xunit -o src/$1.Tests
+        dotnet new xunit tests/$1.Application.IntegrationTests
+        dotnet new xunit tests/$1.Application.UnitTests
+        dotnet new xunit tests/$1.Domain.IntegrationTests
+        dotnet sln add src/$1.Domain
+        dotnet sln add src/$1.Application
+        dotnet sln add tests/$1.Application.IntegrationTests
+        dotnet sln add tests/$1.Application.UnitTests
+        dotnet sln add tests/$1.Domain.IntegrationTests
+        rm src/$1.Domain/Class1.cs
+        rm src/$1.Application/Class1.cs
+        mkdir src/$1.Domain/Models
+        mkdir src/$1.Domain/Exception
+        mkdir src/$1.Domain/Enums
+        mkdir src/$1.Application/Exception
+        mkdir src/$1.Application/Interfaces
         cp ~/source/repos/templates/csharp/.gitignore .
         git init
         git add . 
