@@ -1,0 +1,4 @@
+alias csharp="cd source/repos/C#"
+alias zshconfig="nvim ~/.zshrc"
+alias ohmyzsh="~/.oh-my-zsh"
+

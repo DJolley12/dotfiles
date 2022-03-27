@@ -48,7 +48,7 @@ ENABLE_CORRECTION="true"
 # Uncomment the following line to display red dots whilst waiting for completion.
 # Caution: this setting can cause issues with multiline prompts (zsh 5.7.1 and newer seem to work)
 # See https://github.com/ohmyzsh/ohmyzsh/issues/5765
-# COMPLETION_WAITING_DOTS="true"
+COMPLETION_WAITING_DOTS="true"
 
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
@@ -72,7 +72,6 @@ ENABLE_CORRECTION="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-    git
     zsh-autosuggestions
 )
 
@@ -103,10 +102,19 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias csharp="cd source/repos/C#"
+alias zshconfig="nvim ~/.zshrc"
+alias ohmyzsh="~/.oh-my-zsh"
 if [ -f ~/.zsh/zshalias ]; then
     source ~/.zsh/zshalias
 else
     print "404: ~/.zsh/zshalias not found."
+fi
+
+if [ -f ~/.zsh/csharpfuncs ]; then
+    source ~/.zsh/csharpfuncs
+else
+    print "404: ~/.zsh/csharpfuncs not found."
 fi
 
 avmvvm() {
@@ -145,7 +153,9 @@ dotnetnewcore() {
         mkdir $1.Domain/Enums
         mkdir $1.Application/Exception
         mkdir $1.Application/Interfaces
-        cp ~/source/repos/templates/csharp/.gitignore
+        cp ~/source/repos/templates/csharp/.gitignore .
+        git init
+        git add . 
     else 
         echo "project name is required"
     fi
