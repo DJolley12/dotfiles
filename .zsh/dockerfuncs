@@ -1,0 +1,9 @@
+dockerpsqlexec() {
+    if [ "$1" != "" ] && [ "$2" != "" ] && [ "$3" != "" ]
+    then
+        docker cp ./$1 $2:/docker-entrypoint-initdb.d/$1
+        docker exec -u postgres $2 psql $3 postgres -f  $2:/docker-entrypoint-initdb.d/$1
+    else
+        echo "file, docker container id, and dbname are required"
+    fi
+}

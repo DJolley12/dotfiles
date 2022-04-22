@@ -1,4 +1,7 @@
 alias csharp="cd source/repos/C#"
 alias zshconfig="nvim ~/.zshrc"
 alias ohmyzsh="~/.oh-my-zsh"
-
+alias startpostgres="sudo docker start 4f124c28ab8e"
+alias attachpostgres="sudo docker exec -it 4f124c28ab8e bash"
+alias psql="sudo docker exec -it 4f124c28ab8e psql -h localhost -p 5432 -U postgres -W; "
+alias psexec="dockerpsqlexec $1 4f124c28ab8e $2"

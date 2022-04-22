@@ -3,7 +3,7 @@ avmvvm() {
     then
         dotnet new avalonia.mvvm -o $1 -n $1
     else 
-        ech "project name is required"
+        echo "project name is required"
     fi
 }
 
