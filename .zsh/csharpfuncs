@@ -26,9 +26,9 @@ dotnetnewcore() {
         dotnet new classlib -o src/$1.Domain
         dotnet new classlib -o src/$1.Application
         dotnet new classlib -o src/$1.Infrastructure
-        dotnet new xunit tests/$1.Application.IntegrationTests
-        dotnet new xunit tests/$1.Application.UnitTests
-        dotnet new xunit tests/$1.Domain.IntegrationTests
+        dotnet new nunit tests/$1.Application.IntegrationTests
+        dotnet new nunit tests/$1.Application.UnitTests
+        dotnet new nunit tests/$1.Domain.UnitTests
         dotnet sln add src/$1.Domain
         dotnet sln add src/$1.Application
         dotnet sln add src/$1.Infrastructure

@@ -2,8 +2,19 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
+# C#
 export ZSH="/home/danieljolley/.oh-my-zsh"
 export DOTNET_CLI_TELEMETRY_OPTOUT=1
+export PATH=$PATH:/usr/local/go/bin
+export BROWSER="surf"
+
+# C/C++
+export PATH="$HOME/tools/llvm-project/build/bin:$PATH"
+export LD_LIBRARY_PATH="$HOME/tools/llvm-project/build/lib:$LD_LIBRARY_PATH"
+
+# GO
+export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:/usr/local/go/bin
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -66,7 +77,8 @@ COMPLETION_WAITING_DOTS="true"
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
-# Which plugins would you like to load?
+# Which plugins would you like to load?export PATH="$HOME/tools/llvm-project/build/bin:$PATH"
+export LD_LIBRARY_PATH="$HOME/tools/llvm-project/build/lib:$LD_LIBRARY_PATH"
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
@@ -115,6 +127,12 @@ if [ -f ~/.zsh/csharpfuncs ]; then
     source ~/.zsh/csharpfuncs
 else
     print "404: ~/.zsh/csharpfuncs not found."
+fi
+
+if [ -f ~/.zsh/dockerfuncs ]; then
+    source ~/.zsh/dockerfuncs
+else
+    print "404: ~/.zsh/dockerfuncs not found."
 fi
 
 # avmvvm() {
