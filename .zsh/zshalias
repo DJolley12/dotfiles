@@ -11,3 +11,9 @@ mutt() {
     TERM=tmux-256color
     neomutt
 }
+
+alias ls="exa -1 --icons"
+alias ll="exa -l --icons --git -a"
+alias lt="exa -T --icons --level=2 -I=\"*.dll|obj|bin\""
+
+alias zsource="source ~/.zshrc"

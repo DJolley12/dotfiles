@@ -2,7 +2,8 @@ source ~/.config/neomutt/auth
 set folder = "imaps://imap.gmail.com:993"
 
 set spoolfile = "+INBOX"
-mailboxes = +INBOX
+# mailboxes = +INBOX
+mailboxes =INBOX =[Gmail]/Sent\ Mail =[Gmail]/Drafts =[Gmail]/Spam =[Gmail]/Trash
 set postponed = "+[GMail]/Drafts"
 
 set header_cache = "~/.mutt/cache/headers"
