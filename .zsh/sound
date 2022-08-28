@@ -1,0 +1,17 @@
+# vim: filetype=bash
+
+uv() {
+    if [ -z $1 ]; then
+        amixer -D pulse sset Master 5%+
+    else
+        amixer -D pulse sset Master $1%+
+    fi
+}
+
+dv() {
+    if [ -z $1 ]; then
+        amixer -D pulse sset Master 5%-
+    else
+        amixer -D pulse sset Master $1%-
+    fi
+}

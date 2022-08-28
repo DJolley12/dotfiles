@@ -1,6 +1,6 @@
+# vim: filetype=bash
 avmvvm() {
-    if [ "$1" != "" ]
-    then
+    if [ "$1" != "" ]; then
         dotnet new avalonia.mvvm -o $1 -n $1
     else 
         echo "project name is required"
@@ -8,8 +8,7 @@ avmvvm() {
 }
 
 avuctl() {
-    if [ "$1" != "" ]
-    then
+    if [ "$1" != "" ]; then
         dotnet new avalonia.usercontrol -o Views -n $1 --namespace $PWD.Views
     else 
         echo "view name is required"
@@ -17,8 +16,7 @@ avuctl() {
 }
 
 dotnetnewcore() {
-    if [ "$1" != "" ]
-    then
+    if [ "$1" != "" ]; then
         dotnet new sln -o $1
         cd $1
         mkdir src

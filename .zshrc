@@ -135,6 +135,12 @@ else
     print "404: ~/.zsh/dockerfuncs not found."
 fi
 
+if [ -f ~/.zsh/sound ]; then
+    source ~/.zsh/sound
+else
+    print "404: ~/.zsh/sound not found."
+fi
+
 # avmvvm() {
 #     if [ "$1" != "" ]
 #     then

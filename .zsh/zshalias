@@ -14,6 +14,14 @@ mutt() {
 
 alias ls="exa -1 --icons"
 alias ll="exa -l --icons --git -a"
-alias lt="exa -T --icons --level=2 -I=\"*.dll|obj|bin\""
+alias lld="exa -l --icons --git -a -s=mod -r"
+
+lt() {
+    if [ -z $1 ]; then 
+        echo "folder not specified"
+    else
+        exa -T --icons $1 --level=1  
+    fi
+}
 
 alias zsource="source ~/.zshrc"

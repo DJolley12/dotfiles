@@ -292,10 +292,10 @@ let g:neoformat_enabled_cpp = ['clangformat']
 let g:neoformat_enabled_c = ['clangformat']
 
 " RUST {{{
-        autocmd FileType rs nnoremap <Leader>bb :wa \| ! cargo build<CR>
-        autocmd FileType rs nnoremap <Leader>bu :wa \| ! cargo update<CR>
-        autocmd FileType rs nnoremap <silent> gd :ALEGoToDefinition<CR>
-        autocmd FileType rs nnoremap <buffer> <Leader>fu :ALEFindReferences<CR>
+        " autocmd FileType rs nnoremap <Leader>bb :wa \| ! cargo build<CR>
+        " autocmd FileType rs nnoremap <Leader>bu :wa \| ! cargo update<CR>
+        " autocmd FileType rs nnoremap <silent> gd :ALEGoToDefinition<CR>
+        " autocmd FileType rs nnoremap <buffer> <Leader>fu :ALEFindReferences<CR>
     " }}}
 " }}}
 "
@@ -329,9 +329,9 @@ let g:neoformat_enabled_c = ['clangformat']
     ""medium, hard, soft
     " colorscheme gruvbox
     " colorscheme tokyonight
-    colorscheme moonfly
-    " colorscheme nord
-    " let g:nord_disable_background = v:true
+    " colorscheme moonfly
+    colorscheme nord
+    let g:nord_disable_background = v:true
     " let g:moonflyTransparent = v:true
     " let g:spacegray_low_contrast = 1
     " colorscheme spacegray
