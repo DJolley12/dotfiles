@@ -119,6 +119,7 @@ call plug#end()
 
 " LUA: {{{
 lua <<EOF
+    require('mappings')
     require('treesitter')
     require('devicons-config')
     require('diffview-config')
@@ -128,6 +129,7 @@ lua <<EOF
     require('cmp-setup')
     require('go-nvim')
     require('lsp-installer')
+    require('lsp-config')
 EOF
 " }}}
 
@@ -135,7 +137,6 @@ EOF
 " }}}
 
 " General Remappings: {{{
-    let mapleader = "\<space>"
     nnoremap <Leader>gc :execute '!git commit -m "'.input('Enter message: ').'"'<cr>
     nnoremap <Leader>ga :execute '!git add .'<cr>
     nnoremap <Leader>gp :execute '!git push -u origin .'<cr>
